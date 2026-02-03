@@ -29,10 +29,10 @@ banner() {
   \_____\__,_|_| |_| |_|_|  |_|\__,_| \_/\_/ |_|\_\
                                                    
                                                              
-                                Developer : Sreeraj
+                                Developer : Shiyas ahneee
 
 EOF
- echo -e "${GREEN}* GitHub: https://github.com/s-r-e-e-r-a-j\n${RESET}"
+ echo -e "${GREEN}* GitHub: ${RESET}https://github.com/shiyyaas"
 }
 
 # Install Dependencies
