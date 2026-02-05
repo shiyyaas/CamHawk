@@ -147,7 +147,7 @@ select_tunnel() {
     read  choice
 
     case $choice in
-        1) TUNNEL_CHOICE="serveo" ;;
+        1) TUNNEL_CHOICE="serveo , Don't choose this.It's not working  " ;;
         2) TUNNEL_CHOICE="cloudflared" ;;
         *) echo -e "${RED}[-] Invalid choice! Defaulting to Serveo.net.${RESET}"; TUNNEL_CHOICE="serveo" ;;
     esac
