@@ -169,23 +169,6 @@ select_tunnel() {
     esac
 }
 
-# Start Serveo.net Tunneling
-start_serveo() {
-    echo -e "${YELLOW}[+] Starting Serveo.net tunnel...${RESET}"
-    ssh -R 80:localhost:$SERVER_PORT serveo.net > serveo.txt 2>&1 &
-    TUNNEL_PID=$!
-    sleep 5
-
-    if grep -q "Forwarding HTTP traffic" serveo.txt; then
-        PHISHING_URL=$(grep -oE "https?://[a-zA-Z0-9.-]+\.serveo.net" serveo.txt)
-        echo -e "${GREEN}[+] Phishing Link: ${PHISHING_URL}${RESET}"
-    else
-        echo -e "${RED}[-] Serveo failed!${RESET}"
-        stop_server
-        exit 1
-    fi
-}
-
 # Start Cloudflared Tunneling 
 start_cloudflared() {
     echo -e "${YELLOW}[+] Starting Cloudflared tunnel...${RESET}"
