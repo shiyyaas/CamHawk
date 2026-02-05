@@ -18,6 +18,23 @@ TUNNEL_CHOICE=""
 # Banner
 banner() {
  clear
+  if command -v lolcat &> /dev/null; then
+    # If lolcat is found, use it
+    cat << "EOF" | lolcat
+
+   _____                _    _                _    
+  / ____|              | |  | |              | |   
+ | |     __ _ _ __ ___ | |__| | __ ___      _| | __
+ | |    / _` | '_ ` _ \|  __  |/ _` \ \ /\ / / |/ /
+ | |___| (_| | | | | | | |  | | (_| |\ V  V /|   < 
+  \_____\__,_|_| |_| |_|_|  |_|\__,_| \_/\_/ |_|\_\
+                                                   
+                                                             
+                                Developer : Shiyas ahneee
+
+EOF
+  else
+    # Fallback to plain color if lolcat is missing
  echo -e "${YELLOW}"
  cat << "EOF" 
 
@@ -33,6 +50,7 @@ banner() {
 
 EOF
  echo -e "${GREEN}* GitHub: ${RESET}https://github.com/shiyyaas"
+ fi
 }
 
 # Install Dependencies
